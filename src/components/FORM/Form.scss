@@ -72,6 +72,12 @@
 .married {
   display: flex;
   gap: 20px;
+
+  .input-feedback {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2px;
+  }
 }
 
 .checkbox {

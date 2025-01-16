@@ -42,16 +42,17 @@ const Form = () => {
               age: Yup.number()
                 .required("Age required!")
                 .min(0, "Age must be 0 or greater"),
-              isMarried: Yup.string(),
+              isMarried: Yup.string().required("Marital status required!"),
               agree: Yup.boolean()
                 .oneOf([true], "You must agree with the terms of use")
                 .required("You must agree with the terms of use"),
             })}
             onSubmit={(values, { resetForm }) => {
-              console.log(values);
               toast.success("user created");
+              console.log(values);
+              // localStorage.setItem("user", JSON.stringify(values));
               resetForm();
-            }}c
+            }}
           >
             {({
               values,
